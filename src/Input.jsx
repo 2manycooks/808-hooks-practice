@@ -1,6 +1,6 @@
 function Input(props) {
  return(
-    <input type='text' value={props.user} onChange={e => {props.setUser(e.target.value)}}></input>
+    <input type='text' value={props.stringArray} onChange={e => {props.setStringArray([...props.stringArray, e.target.value])}}></input>
  )
 }
 

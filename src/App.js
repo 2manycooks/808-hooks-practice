@@ -8,6 +8,7 @@ function App() {
   const [isGabe, setIsGabe] = useState(true)
   const [objUser, setObjUser] = useState({name: "Gabe", location: "Berkeley"})
   const [finishedGrades, setFinishedGrades] = useState([55, 75, 100])
+  const [stringArray, setStringArray] = useState([])
 
   const increaseCount = () => {
     setCount(count + 1)
@@ -47,7 +48,7 @@ function App() {
       <button onClick={setToWeston}>Weston</button>
       <button onClick={setToApril}>April</button>
       <button onClick={setToGabe}>Gabe</button>
-      <Input user={user} setUser={setUser}/>
+      <Input user={user} setUser={setUser} stringArray={stringArray} setStringArray={setStringArray}/>
       {/* <h2>{objUser.name}</h2>
 
 
@@ -62,6 +63,10 @@ function App() {
       })}
       <button onClick={addHundred}>New 100</button>
 
+      <h2>Letters from input:</h2>
+      {stringArray.map((element, idx) => {
+        return <p>{element}</p>
+      })}
     </div>
   );
 }
